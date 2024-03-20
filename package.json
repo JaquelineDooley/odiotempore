@@ -1,0 +1,58 @@
+{
+  "name": "odiotempore",
+  "version": "1.0.0",
+  "description": "Inspired by Vite's Not Bundle, building ts for use in Node.js.",
+  "main": "index.js",
+  "types": "types",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaquelineDooley/odiotempore.git"
+  },
+  "author": "AlexandreBoyle",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "rm -rf types && tsc --emitDeclarationOnly && vite build && npm run test",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@swc/core": "*"
+  },
+  "peerDependenciesMeta": {
+    "@swc/core": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "fast-glob": "^3.2.12"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.24",
+    "@types/node": "^18.11.17",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.2",
+    "vitest": "^0.26.2"
+  },
+  "files": [
+    "types",
+    "index.mjs",
+    "index.js"
+  ],
+  "keywords": [
+    "maiores",
+    "bundle",
+    "build"
+  ],
+  "bugs": {
+    "url": "https://github.com/JaquelineDooley/odiotempore.git/issues"
+  },
+  "homepage": "https://github.com/JaquelineDooley/odiotempore.git"
+}
